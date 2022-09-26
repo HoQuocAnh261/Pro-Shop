@@ -20,6 +20,20 @@ const userApi = {
     const url = `/user/profile`;
     return axiosClient.put(url, data);
   },
+
+  getListUser() {
+    const url = "/user";
+    return axiosClient.get(url);
+  },
+
+  deleteUser(id) {
+    const url = `/user/${id}`;
+    return axiosClient.delete(url);
+  },
+  updateUser(data) {
+    const url = `/user/${data._id}`;
+    return axiosClient.put(url, data);
+  },
 };
 
 export default userApi;

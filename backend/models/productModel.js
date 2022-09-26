@@ -5,8 +5,14 @@ const reviewSchema = mongoose.Schema(
     name: { type: String, require: true },
     rating: { type: Number, require: true },
     comment: { type: String, require: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
   },
-  { timestamp: true }
+
+  { timestamps: true }
 );
 
 const productSchema = mongoose.Schema(
@@ -58,7 +64,7 @@ const productSchema = mongoose.Schema(
       default: 0,
     },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 
 const Product = mongoose.model("Product", productSchema);
