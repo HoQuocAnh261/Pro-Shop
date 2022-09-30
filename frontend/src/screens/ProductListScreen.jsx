@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
-import { Table, Button, Row, Col } from "react-bootstrap";
+import { Table, Button, Row, Col, Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -74,13 +74,13 @@ function ProductListScreen() {
   };
   return (
     <>
-      <Row className="align-items-center">
+      <Row className="">
         <Col>
-          <h1>Products</h1>
+          <h1>DANH SÁCH SẢN PHẨM</h1>
         </Col>
-        <Col className="text-right">
+        <Col>
           <Button className="my-3" onClick={createProductHandler}>
-            <i className="fas fa-plus"></i> Create Product
+            <i className="fas fa-plus"></i> THÊM SẢN PHẨM
           </Button>
         </Col>
       </Row>
@@ -95,18 +95,26 @@ function ProductListScreen() {
           <Table striped bordered hover responsive className="table-sm">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th></th>
+                <th>ẢNH</th>
+                <th>TÊN SẢN PHẨM</th>
+                <th>GIÁ</th>
+                <th>LOẠI</th>
+                <th>THƯƠNG HIỆU</th>
+                <th>CHỈNH SỬA</th>
               </tr>
             </thead>
             <tbody>
               {products.map((product) => (
                 <tr key={product._id}>
-                  <td>{product._id}</td>
+                  <td>
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fluid
+                      rounded
+                      width="150px"
+                    />
+                  </td>
                   <td>{product.name}</td>
                   <td>{formatMoney(product.price)}</td>
                   <td>{product.category}</td>

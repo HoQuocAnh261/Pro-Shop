@@ -35,7 +35,7 @@ function UserListScreen() {
   };
   return (
     <>
-      <h1>Users</h1>
+      <h1>DANH SÁCH TÀI KHOẢN</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -45,10 +45,10 @@ function UserListScreen() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
+              <th>TÊN</th>
               <th>EMAIL</th>
-              <th>ADMIN</th>
-              <th></th>
+              <th>VAI TRÒ</th>
+              <th>CHỈNH SỬA</th>
             </tr>
           </thead>
           <tbody>
@@ -59,13 +59,7 @@ function UserListScreen() {
                 <td>
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </td>
-                <td>
-                  {user.isAdmin ? (
-                    <i className="fas fa-check" style={{ color: "green" }}></i>
-                  ) : (
-                    <i className="fas fa-times" style={{ color: "red" }}></i>
-                  )}
-                </td>
+                <td>{user.isAdmin ? <p>Admin</p> : <p>User</p>}</td>
                 <td>
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant="light" className="btn-sm">

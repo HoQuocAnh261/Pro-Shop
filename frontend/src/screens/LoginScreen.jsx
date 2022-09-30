@@ -41,6 +41,7 @@ function LoginScreen() {
           <Form.Label>Địa chỉ email</Form.Label>
           <Form.Control
             type="email"
+            required
             placeholder="Điền email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -51,6 +52,7 @@ function LoginScreen() {
           <Form.Control
             type="password"
             placeholder="Điền mật khẩu"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>

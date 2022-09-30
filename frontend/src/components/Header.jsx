@@ -20,14 +20,20 @@ function Header() {
 
   return (
     <header>
-      <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar
+        bg="primary"
+        variant="dark"
+        expand="lg"
+        collapseOnSelect
+        className="py-3"
+      >
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>Pro Shop</Navbar.Brand>
           </LinkContainer>
+          <SearchBox />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <SearchBox />
             <Nav className="ms-auto">
               {userInfo && userInfo.isAdmin ? null : (
                 <LinkContainer to="/cart">
@@ -38,15 +44,15 @@ function Header() {
               )}
 
               {userInfo && userInfo.isAdmin ? (
-                <NavDropdown title="Admin" id="adminmenu">
+                <NavDropdown title="Admin(Quản trị viên)" id="adminmenu">
                   <LinkContainer to="/admin/user-list">
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                    <NavDropdown.Item>Người dùng</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/product-list">
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item>Sản phẩm </NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/order-list">
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item>Đơn hàng</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Đăng xuất

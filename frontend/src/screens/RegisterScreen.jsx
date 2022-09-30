@@ -26,7 +26,7 @@ function RegisterScreen() {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setMessage("Passwords do not match");
+      setMessage("Nhập lại mật khẩu không trùng khắp");
     } else {
       dispatch(register({ name, email, password }));
     }
@@ -50,6 +50,7 @@ function RegisterScreen() {
           <Form.Control
             type="text"
             placeholder="Điền tên tài khoản"
+            required
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
@@ -59,6 +60,7 @@ function RegisterScreen() {
           <Form.Control
             type="email"
             placeholder="Điền địa chỉ email"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -68,6 +70,7 @@ function RegisterScreen() {
           <Form.Control
             type="password"
             placeholder="Điền mật khẩu"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
@@ -77,6 +80,7 @@ function RegisterScreen() {
           <Form.Control
             type="password"
             placeholder="Nhập lại mật khẩu"
+            required
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>

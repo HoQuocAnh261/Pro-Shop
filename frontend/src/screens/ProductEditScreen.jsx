@@ -93,7 +93,7 @@ function ProductEditScreen() {
         Trở về
       </Link>
       <FormContainer>
-        <h1>Chỉnh sửa sản phẩm</h1>
+        <h1>CHỈNH SỬA SẢN PHẨM</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
@@ -103,7 +103,7 @@ function ProductEditScreen() {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Tên Sản Phẩm</Form.Label>
               <Form.Control
                 type="name"
                 placeholder="Enter name"
@@ -113,7 +113,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="price">
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Giá</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter price"
@@ -123,7 +123,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="image">
-              <Form.Label>Hình ảnh</Form.Label>
+              <Form.Label>Hình Ảnh</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Nhập đường dẫn"
@@ -136,7 +136,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="brand">
-              <Form.Label>Brand</Form.Label>
+              <Form.Label>Thương Hiệu</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter brand"
@@ -146,7 +146,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="countInStock">
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>Số Lượng</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter countInStock"
@@ -156,7 +156,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="category">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Phân Loại</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter category"
@@ -166,7 +166,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Mô Tả</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter description"
@@ -176,7 +176,7 @@ function ProductEditScreen() {
             </Form.Group>
 
             <Button type="submit" variant="primary">
-              Update
+              Cập Nhật
             </Button>
           </Form>
         )}

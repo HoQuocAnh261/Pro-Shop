@@ -32,7 +32,7 @@ function OrderListScreen() {
   //   };
   return (
     <>
-      <h1>Users</h1>
+      <h1>QUẢN LÝ ĐƠN HÀNG</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -41,13 +41,13 @@ function OrderListScreen() {
         <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th></th>
+              <th>MÃ ĐƠN</th>
+              <th>TÀI KHOẢN</th>
+              <th>NGÀY ĐẶT</th>
+              <th>TỔNG TIỀN</th>
+              <th>THANH TOÁN</th>
+              <th>GIAO HÀNG</th>
+              <th>CHI TIẾT</th>
             </tr>
           </thead>
           <tbody>
@@ -73,8 +73,8 @@ function OrderListScreen() {
                 </td>
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
-                    <Button variant="light" className="btn-sm">
-                      Details
+                    <Button variant="light" className="btn-sm bg-success">
+                      Chi tiết
                     </Button>
                   </LinkContainer>
                 </td>
