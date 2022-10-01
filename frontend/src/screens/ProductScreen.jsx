@@ -37,7 +37,7 @@ function ProductScreen() {
   } = productReviewCreate;
 
   const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function ProductScreen() {
       dispatch(detailsProduct(params.id));
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
-  }, [dispatch, params.id, successProductReview, product._id]);
+  }, [dispatch, params.id, successProductReview, product._id, rating]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${params.id}/?qty=${qty}`);

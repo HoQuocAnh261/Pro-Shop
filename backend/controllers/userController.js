@@ -41,6 +41,10 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Email đã được đăng ký tài khoản");
   }
+  if (password.length < 6) {
+    res.status(400);
+    throw new Error("Độ dài mật khẩu tối thiểu 6 kí tự");
+  }
   const user = await User.create({ name, email, password });
   if (user) {
     res.status(201).send({

@@ -29,10 +29,18 @@ function App() {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/page/:pageNumber" element={<HomeScreen />} />
             <Route
+              path="/page/:pageNumber/product/:id"
+              element={<ProductScreen />}
+            />
+            <Route
               path="/search/:keyword/page/:pageNumber"
               element={<HomeScreen />}
             />
             <Route path="/search/:keyword" element={<HomeScreen />} />
+            <Route
+              path="/search/:keyword/product/:id"
+              element={<ProductScreen />}
+            />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/cart">
               <Route path="" element={<CartScreen />} />
