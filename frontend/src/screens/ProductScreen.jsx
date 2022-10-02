@@ -17,6 +17,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Meta from "../components/Meta";
 import formatMoney from "../utils/formatMoney";
+import PageNotFound from "../components/PageNotFound";
 
 function ProductScreen() {
   const params = useParams();
@@ -49,7 +50,7 @@ function ProductScreen() {
       dispatch(detailsProduct(params.id));
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
-  }, [dispatch, params.id, successProductReview, product._id, rating]);
+  }, [dispatch, params.id, successProductReview, rating]);
 
   const addToCartHandler = () => {
     navigate(`/cart/${params.id}/?qty=${qty}`);
@@ -66,16 +67,16 @@ function ProductScreen() {
   };
   return (
     <>
-      <Meta title={product.name} />
       <Link className="btn btn-light my-3 text-primary" to="/">
         Trở lại
       </Link>
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message message={error} variant={"danger"} />
+        <h1>Lỗi</h1>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
