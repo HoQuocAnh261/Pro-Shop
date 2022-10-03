@@ -7,6 +7,7 @@ import { ORDER_DELIVER_RESET } from "../constants/orderConstants";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import formatMoney from "../utils/formatMoney";
+import PageNotFound from "../components/PageNotFound";
 
 function OrderScreen() {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ function OrderScreen() {
   return loading ? (
     <Loader />
   ) : error ? (
-    <Message>{error}</Message>
+    <PageNotFound title="thông tin giao hàng" />
   ) : (
     <Row>
       <h1>Order {order._id}</h1>

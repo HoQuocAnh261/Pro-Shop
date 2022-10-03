@@ -73,7 +73,7 @@ function ProductScreen() {
       {loading ? (
         <Loader />
       ) : error ? (
-        <h1>Lỗi</h1>
+        <PageNotFound title="sản phẩm" />
       ) : (
         <>
           <Meta title={product.name} />
