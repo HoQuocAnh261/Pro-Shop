@@ -42,6 +42,7 @@ function ProductScreen() {
   const [comment, setComment] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (successProductReview) {
       setRating(0);
       setComment("");

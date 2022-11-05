@@ -21,7 +21,7 @@ function Header() {
   return (
     <header>
       <Navbar
-        bg="primary"
+        bg="info"
         variant="dark"
         expand="lg"
         collapseOnSelect
